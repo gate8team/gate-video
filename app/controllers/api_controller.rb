@@ -3,7 +3,7 @@ class ApiController < ApplicationController
 
   def test
     respond_to do |format|
-      format.json { render json: {'sample' => 'data'}}
+      format.json { render json: {message: 'auth'}}
     end
   end
 end

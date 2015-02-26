@@ -8,4 +8,6 @@ To install the app:
 
 * rake db:migrate
 
+* rake db:seed
+
 curl -X POST -d "user[email]=anton@geekatoo.com&user[password]=ntcn.pth" http://127.0.0.1:3000/users/sign_in.json
