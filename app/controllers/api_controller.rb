@@ -3,7 +3,7 @@ class ApiController < ApplicationController
 
   def test
     respond_to do |format|
-      format.json { render json: {message: 'auth'}}
+      format.json { render json: {message: 'Secret method is here :)'}}
     end
   end
 end

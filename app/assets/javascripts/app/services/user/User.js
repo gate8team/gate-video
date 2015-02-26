@@ -1,19 +1,23 @@
 'use strict';
 
 (function(app){
-    app.service('User', function($http, $log, $window, $q, APIEndpoints, Event, $rootScope) {
+    app.service('User', function($http, $log, $window, $q, $rootScope, APIEndpoints, Event) {
         var user = {
             status: 'unauth'
         };
         
         user.login = function(user) {
             $http
-                .post(APIEndpoints.auth.login, user)
+                .post(APIEndpoints.auth.login, {user: user})
                 .success(function (data, status, headers, config) {
                     if (!!data.token) {
                         $window.sessionStorage.token = data.token;
                     }
+                    $rootScope.$broadcast(Event.auth.loggedIn);
                     $log.log(data);
+                })
+                .error(function (data, status, headers, config) {
+                    $rootScope.$broadcast(Event.auth.notAuthorized);
                 });
         };
         
@@ -26,15 +30,17 @@
                     deferred.resolve(data);
                     $log.log(data);
                 }).error(function(data, status, headers, config) {
-                    deferred.reject({message: 'not auth.. sorry..'});
-                    $rootScope.$broadcast(Event.auth.notAuthenticated);
+                    deferred.reject({message: 'Not Auth.. Sorry..'});
+                    $rootScope.$broadcast(Event.auth.notAuthorized);
                 });
             
             return deferred.promise;
         };
         
         user.logout = function() {
-            $window.sessionStorage.removeItem('token');  
+            $http.delete(APIEndpoints.auth.logout);
+            $window.sessionStorage.removeItem('token');
+            $rootScope.$broadcast(Event.auth.loggedOut);
         };
         
         return user;

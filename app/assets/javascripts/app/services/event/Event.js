@@ -7,7 +7,9 @@
                 auth: {
                     notAuthenticated: 'notAuthenticated',
                     notAuthorized: 'notAuthorized',
-                    sessionTimeout: 'sessionTimeout'
+                    sessionTimeout: 'sessionTimeout',
+                    loggedOut: 'loggedIn',
+                    loggedIn: 'loggedIn'
                 }
             };
         });
