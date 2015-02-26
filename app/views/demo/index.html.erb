@@ -1,8 +1,8 @@
 <div ng-app="gateVideoApp">
   <div ng-controller="AuthController">
     {{message}}<br>
-    <input ng-model="email" type="text" placeholder="email.."><br>
-    <input ng-model="password" type="text" placeholder="password.."><br>
+    <input ng-model="user.email" type="text" placeholder="email.."><br>
+    <input ng-model="user.password" type="text" placeholder="password.."><br>
     <input type="submit" ng-click="login()" value="login">
     <input type="submit" ng-click="logout()" value="logout">
     <input type="submit" ng-click="apiCall()" value="api call">

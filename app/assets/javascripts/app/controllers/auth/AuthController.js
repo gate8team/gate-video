@@ -5,7 +5,7 @@
         $scope.message = User.status;
         
         $scope.login = function() {
-            User.login($scope.email, $scope.password);
+            User.login($scope.user);
         };
         
         $scope.logout = function() {
