@@ -1,28 +1,11 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To install the app:
 
-Things you may want to cover:
+* bundle install
 
-* Ruby version
+* rake db:create
 
-* System dependencies
+* rake db:migrate
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+curl -X POST -d "user[email]=anton@geekatoo.com&user[password]=ntcn.pth" http://127.0.0.1:3000/users/sign_in.json
