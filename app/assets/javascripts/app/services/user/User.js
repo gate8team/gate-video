@@ -34,7 +34,7 @@
         };
         
         user.logout = function() {
-            $window.sessionStorage.token = null;  
+            $window.sessionStorage.removeItem('token');  
         };
         
         return user;
