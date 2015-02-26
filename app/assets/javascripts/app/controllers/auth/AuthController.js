@@ -1,7 +1,7 @@
 'use strict';
 
 (function(app){
-    app.controller('AuthController', function($scope, User) {
+    app.controller('AuthController', function($scope, $rootScope, $log, User, Event) {
         $scope.message = User.status;
         
         $scope.login = function() {
@@ -19,5 +19,10 @@
                 $scope.message = data.message;
             });
         };
+
+        $rootScope.$on(Event.auth.notAuthenticated, function() {
+            // Do here whatever you want
+            $log.log('Not Auth');
+        });
     });
 })(window.gateVideoControllersApp);

@@ -1,7 +1,7 @@
 'use strict';
 
 (function(app){
-    app.service('User', function($http, $log, $window, $q, APIEndpoints) {
+    app.service('User', function($http, $log, $window, $q, APIEndpoints, Event, $rootScope) {
         var user = {
             status: 'unauth'
         };
@@ -27,7 +27,7 @@
                     $log.log(data);
                 }).error(function(data, status, headers, config) {
                     deferred.reject({message: 'not auth.. sorry..'});
-                    $log.log(data);
+                    $rootScope.$broadcast(Event.auth.notAuthenticated);
                 });
             
             return deferred.promise;
