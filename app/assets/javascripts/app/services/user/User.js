@@ -20,7 +20,7 @@
         user.sendApiRequest = function() {
             var deferred = $q.defer();
             
-            $http.defaults.headers.common['Authorization'] = 'Bearer {token}'.replace('{token}', $window.sessionStorage.token);
+            //$http.defaults.headers.common['Authorization'] = 'Bearer {token}'.replace('{token}', $window.sessionStorage.token);
             $http.get(APIEndpoints.api.test)
                 .success(function(data, status, headers, config) {
                     deferred.resolve(data);
