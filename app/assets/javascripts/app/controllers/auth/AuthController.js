@@ -2,7 +2,7 @@
 
 (function(app){
     app.controller('AuthController', function($scope, $rootScope, $log, User, Event) {
-        $scope.message = 'Some title here';
+        $scope.message = null;
         
         $scope.login = function() {
             User.login($scope.user);

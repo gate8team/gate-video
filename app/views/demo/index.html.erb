@@ -1,10 +1,32 @@
-<div ng-app="gateVideoApp">
-  <div ng-controller="AuthController">
-    {{message}}<br>
-    <input ng-model="user.email" type="text" placeholder="email.."><br>
-    <input ng-model="user.password" type="text" placeholder="password.."><br>
-    <input type="submit" ng-click="login()" value="login">
-    <input type="submit" ng-click="logout()" value="logout">
-    <input type="submit" ng-click="apiCall()" value="api call">
+<div class="ui two column centered grid">
+  <div class="column">
+    <div class="b-login-form" ng-app="gateVideoApp">
+      <div class="ui form" ng-controller="AuthController">
+        <div class="ui blue message" ng-if="message">{{message}}</div>
+        <div class="two fields">
+          <div class="required field">
+            <label>Email</label>
+            <div class="ui icon input">
+              <input ng-model="user.email" type="text" placeholder="Email">
+              <i class="user icon"></i>
+            </div>
+          </div>
+          <div class="required field">
+            <label>Password</label>
+            <div class="ui icon input">
+              <input ng-model="user.password" type="password">
+              <i class="lock icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field three fields">
+            <input type="submit" class="ui submit button" ng-click="logout()" value="logout">
+            <input type="submit" class="ui submit button" ng-click="apiCall()" value="api call">
+            <submit class="ui right labeled icon primary button" ng-click="login()">Login <i class="right arrow icon"></i></submit>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

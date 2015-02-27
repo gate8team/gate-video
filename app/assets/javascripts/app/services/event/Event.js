@@ -8,7 +8,7 @@
                     notAuthenticated: 'notAuthenticated',
                     notAuthorized: 'notAuthorized',
                     sessionTimeout: 'sessionTimeout',
-                    loggedOut: 'loggedIn',
+                    loggedOut: 'loggedOut',
                     loggedIn: 'loggedIn'
                 }
             };
