@@ -1,0 +1,31 @@
+<div class="ui two column centered grid">
+    <div class="column">
+        <div class="b-login-form">
+            <div class="ui form">
+                <div class="ui blue message" ng-if="message">{{message}}</div>
+                <div class="two fields">
+                    <div class="required field">
+                        <label>Email</label>
+                        <div class="ui icon input">
+                            <input ng-model="user.email" type="text" placeholder="Email">
+                            <i class="user icon"></i>
+                        </div>
+                    </div>
+                    <div class="required field">
+                        <label>Password</label>
+                        <div class="ui icon input">
+                            <input ng-model="user.password" type="password">
+                            <i class="lock icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field three fields">
+                        <submit class="ui submit button">sign up</submit>
+                        <submit class="ui right labeled icon primary button" ng-click="login()">sign in <i class="right arrow icon"></i></submit>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

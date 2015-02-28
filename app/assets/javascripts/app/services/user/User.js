@@ -1,7 +1,7 @@
 'use strict';
 
 (function(app){
-    app.service('User', function($http, $log, $window, $q, $rootScope, APIEndpoints, Event) {
+    app.service('User', function($http, $log, $window, $q, $rootScope, $location, APIEndpoints, Event) {
         var user = {
             status: 'unauth'
         };
@@ -12,9 +12,10 @@
                 .success(function (data, status, headers, config) {
                     if (!!data.token) {
                         $window.sessionStorage.token = data.token;
+                        $rootScope.$broadcast(Event.auth.loggedIn);
+                        $location.path('/');
                     }
-                    $rootScope.$broadcast(Event.auth.loggedIn);
-                    $log.log(data);
+                    //$log.log(data);
                 })
                 .error(function (data, status, headers, config) {
                     $rootScope.$broadcast(Event.auth.notAuthorized);
@@ -41,7 +42,8 @@
             $http.delete(APIEndpoints.auth.logout);
             $window.sessionStorage.removeItem('token');
             $rootScope.$broadcast(Event.auth.loggedOut);
-        };
+            //$location.path('/login');
+        };  
         
         return user;
     });

@@ -25,3 +25,15 @@
 .b-login-form {
     padding: 100px 20px;
 }
+
+.ui.dropdown .menu {
+    display: block;
+}
+
+.b-content {
+    margin: 20px 0;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid rgba(39,41,43,.15);
+    /*border-bottom: 1px solid rgba(39,41,43,.15);*/
+}
