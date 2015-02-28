@@ -13,6 +13,10 @@
                         index: {
                             type: 'get',
                             path: '/api/v1/web-sites.json'
+                        },
+                        create: {
+                            type: 'post',
+                            path: '/api/v1/web-sites/create.json'
                         }
                     },
                     test: '/api/test.json'

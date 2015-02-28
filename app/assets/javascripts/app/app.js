@@ -1,7 +1,7 @@
 'use strict';
 
 (function (angular, global) {
-    var gateVideoApp = angular.module('gateVideoApp', ['gateVideoApp.services', 'gateVideoApp.controllers', 'ngRoute']);
+    var gateVideoApp = angular.module('gateVideoApp', ['gateVideoApp.services', 'gateVideoApp.controllers', 'ngRoute', 'solo.table']);
 
     gateVideoApp.config(function ($httpProvider) {
         $httpProvider.interceptors.push('tokenInjector');
@@ -19,6 +19,10 @@
             }).
             when('/web-sites', {
                 templateUrl: '/assets/app/views/client/web-sites.html',
+                controller: 'WebSiteController'
+            }).
+            when('/web-sites/add', {
+                templateUrl: '/assets/app/views/client/add-web-site.html',
                 controller: 'WebSiteController'
             }).
             otherwise({

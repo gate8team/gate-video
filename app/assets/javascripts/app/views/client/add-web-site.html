@@ -1,0 +1,46 @@
+<!--Header start here-->
+<div ng-include="'/assets/app/views/partials/client/header.html'"></div>
+<!--Header end here-->
+
+<!--Sub menu start here-->
+<div class="ui tiered menu" style="margin: 0;">
+    <div class="ui sub menu">
+        <a class="item">Actions</a>
+        <a href="#/web-sites/add" class="item active">Add</a>
+        <a class="item">Remove</a>
+    </div>
+</div>
+<!--Sub menu end here-->
+
+<!--Content start here-->
+<div class="b-content">
+    <form name="addNewWebsiteForm" class="ui form" ng-submit="create()">
+        <h3 class="ui dividing header">Add new website</h3>
+        <div class="two fields">
+            <div class="required field">
+                <label>Name</label>
+
+                <div class="ui icon input">
+                    <input ng-model="webSite.name" type="text" placeholder="Web Site Name" required>
+                </div>
+            </div>
+            <div class="required field">
+                <label>URL</label>
+
+                <div class="ui icon input">
+                    <input ng-model="webSite.url" type="text" placeholder="Web Site URL" required>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <label>Description</label>
+            <textarea ng-model="webSite.description"></textarea>
+        </div>
+        <div class="two fields">
+            <div class="field three fields">
+                <input type="submit" ng-disabled="!addNewWebsiteForm.$valid" class="ui right labeled primary button" value="Create new web site">
+            </div>
+        </div>
+    </form>
+</div>
+<!--Content end here-->

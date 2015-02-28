@@ -5,8 +5,8 @@
 <!--Sub menu start here-->
 <div class="ui tiered menu" style="margin: 0;">
     <div class="ui sub menu">
-        <a class="active item">Search</a>
-        <a class="item">Add</a>
+        <a class="active item">Actions</a>
+        <a href="#/web-sites/add" class="item">Add</a>
         <a class="item">Remove</a>
     </div>
 </div>
@@ -14,22 +14,41 @@
 
 <!--Content start here-->
 <div class="b-content">
-    <h3 class="ui header">My web sites</h3>
-    <table class="ui celled table segment">
-        <thead>
+    <h3 class="ui header">My web sites ({{ webSites.length }})</h3>
+    <solo-table items-on-page="10" make-sortable>
+        <div solo-table-data="webSites"></div>
+        <table class="ui celled table segment">
+            <thead>
             <tr>
-                <th>Name</th>
+                <th sort-by="name">Name</th>
+                <th sort-by="url">URL</th>
                 <th width="70%">Description</th>
-                <th width="10%">Status</th>
+                <th sort-by="status_id" width="10%">Status</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <tr ng-repeat="webSite in webSites">
                 <td>{{webSite.name}}</td>
+                <td>{{webSite.url}}</td>
                 <td>{{webSite.description}}</td>
                 <td ng-class="{'negative': webSite.status_id == 2, 'positive': webSite.status_id == 1, 'warning': webSite.status_id == 0}">{{webSite.status}}</td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+        <div class="ui pagination menu">
+            <a solo-table-first-page ng-click="gotoFirstPage()" class="icon item">
+                <i class="left arrow icon"></i>
+            </a>
+            <a ng-click="gotoPrevPage()" class="item">
+                Prev
+            </a>
+            <a ng-click="gotoNextPage()" class="item">
+                Next
+            </a>
+            <a ng-click="gotoLastPage()" class="icon item">
+                <i class="right arrow icon"></i>
+            </a>
+        </div>
+    </solo-table>
 </div>
 <!--Content end here-->

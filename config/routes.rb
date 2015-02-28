@@ -14,6 +14,7 @@ GateTv::Application.routes.draw do
     namespace :v1 do
       scope '/web-sites' do
         get '/', to: 'web_sites#index'
+        post '/create', to: 'web_sites#create'
       end
     end
   end

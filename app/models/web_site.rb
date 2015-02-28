@@ -25,7 +25,8 @@ class WebSite < ActiveRecord::Base
       name: self.name,
       description: self.description,
       status: self.status,
-      status_id: self.status_id
+      status_id: self.status_id,
+      url: self.url
     }
   end
 end
