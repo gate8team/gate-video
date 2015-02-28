@@ -1,14 +1,14 @@
 <div class="ui tiered menu">
-    <div class="menu" ng-init="tabs = {friends: 0, browse: 1, messages: 2}; activeTab = tabs.friends">
-        <a class="item" ng-class="{'active': activeTab == tabs.friends}" ng-click="activeTab = tabs.friends">
+    <div class="menu" ng-init="tabs = {dashboard: 0, myURLs: 1, videoServices: 2}; activeTab = tabs.friends">
+        <a class="item" ng-class="{'active': activeTab == tabs.dashboard}" ng-click="activeTab = tabs.dashboard">
             <i class="users icon"></i>
-            Friends
+            Dashboard
         </a>
-        <a class="item" ng-class="{'active': activeTab == tabs.browse}" ng-click="activeTab = tabs.browse">
-            <i class="grid layout icon"></i> Browse
+        <a class="item" ng-class="{'active': activeTab == tabs.myURLs}" ng-click="activeTab = tabs.myURLs">
+            <i class="grid layout icon"></i> My URLs
         </a>
-        <a class="item" ng-class="{'active': activeTab == tabs.messages}" ng-click="activeTab = tabs.messages">
-            <i class="mail icon"></i> Messages
+        <a class="item" ng-class="{'active': activeTab == tabs.videoServices}" ng-click="activeTab = tabs.videoServices">
+            <i class="mail icon"></i> Video Services
         </a>
         <div class="right menu">
             <div class="item">
