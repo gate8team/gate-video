@@ -40,6 +40,8 @@ gem 'devise'
 gem 'jwt'
 # cors
 gem 'rack-cors', :require => 'rack/cors'
+# fake data
+gem 'faker'
 
 # development gems
 group :development do

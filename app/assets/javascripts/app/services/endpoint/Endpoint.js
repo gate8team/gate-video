@@ -9,6 +9,12 @@
                     logout: '/users/sign_out.json'
                 },
                 api: {
+                    webSites: {
+                        index: {
+                            type: 'get',
+                            path: '/api/v1/web-sites.json'
+                        }
+                    },
                     test: '/api/test.json'
                 }
             };

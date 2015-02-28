@@ -4,7 +4,7 @@ class Api::V1::WebSitesController < ApplicationController
   # returns all websites of current user
   def index
     respond_to do |format|
-      format.json { render json: {data: current_user.web_sites}}
+      format.json { render json: {data: current_user.web_sites.map(&:in_json)}}
     end
   end
 end
