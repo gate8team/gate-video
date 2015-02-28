@@ -2,6 +2,16 @@
 <div ng-include="'/assets/app/views/partials/client/header.html'"></div>
 <!--Header end here-->
 
+<!--Sub menu start here-->
+<div class="ui tiered menu" style="margin: 0;">
+    <div class="ui sub menu">
+        <a class="active item">Search</a>
+        <a class="item">Add</a>
+        <a class="item">Remove</a>
+    </div>
+</div>
+<!--Sub menu end here-->
+
 <!--Content start here-->
 <div class="b-content">
     <input type="submit" class="ui submit button" ng-click="apiCall()" value="api call">
