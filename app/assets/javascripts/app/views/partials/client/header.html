@@ -1,11 +1,11 @@
 <div class="ui tiered menu">
     <div class="menu" ng-init="tabs = {dashboard: 0, myURLs: 1, videoServices: 2}; activeTab = tabs.friends">
-        <a class="item" ng-class="{'active': activeTab == tabs.dashboard}" ng-click="activeTab = tabs.dashboard">
+        <a href="#/" class="item" ng-class="{'active': activeTab == tabs.dashboard}" ng-click="activeTab = tabs.dashboard">
             <i class="users icon"></i>
             Dashboard
         </a>
-        <a class="item" ng-class="{'active': activeTab == tabs.myURLs}" ng-click="activeTab = tabs.myURLs">
-            <i class="grid layout icon"></i> My URLs
+        <a href="#/web-sites" class="item" ng-class="{'active': activeTab == tabs.myURLs}" ng-click="activeTab = tabs.myURLs">
+            <i class="grid layout icon"></i> My Web Sites
         </a>
         <a class="item" ng-class="{'active': activeTab == tabs.videoServices}" ng-click="activeTab = tabs.videoServices">
             <i class="mail icon"></i> Video Services

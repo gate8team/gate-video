@@ -2,6 +2,21 @@ GateTv::Application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
-  get '/api/test', to: 'api#test'
+  
+  # scope '/api' do
+  #   scope '/web-sites' do
+  #     get '/', to: ''
+  #   end
+  #   get '/test', to: 'api#test'
+  # end
+
+  namespace :api do
+    namespace :v1 do
+      scope '/web-sites' do
+        get '/', to: 'web_sites#index'
+      end
+    end
+  end
+  
   root 'demo#index'
 end

@@ -17,6 +17,10 @@
                 templateUrl: '/assets/app/views/login.html',
                 controller: 'AuthController'
             }).
+            when('/web-sites', {
+                templateUrl: '/assets/app/views/client/web-sites.html',
+                controller: 'AuthController'
+            }).
             otherwise({
                 redirectTo: '/login'
             });
