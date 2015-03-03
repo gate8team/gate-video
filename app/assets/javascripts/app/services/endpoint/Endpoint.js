@@ -17,6 +17,10 @@
                         create: {
                             type: 'post',
                             path: '/api/v1/web-sites/create.json'
+                        },
+                        remove: {
+                            type: 'post',
+                            path: '/api/v1/web-sites/remove.json'
                         }
                     },
                     test: '/api/test.json'

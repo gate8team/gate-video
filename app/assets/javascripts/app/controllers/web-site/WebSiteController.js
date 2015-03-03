@@ -1,7 +1,8 @@
 'use strict';
 
 (function(app){
-    app.controller('WebSiteController', function($scope, $rootScope, $log, WebSite, Event) {
+    app.controller('WebSiteController', function($scope, $rootScope, $log, WebSite, Event, $timeout) {
+        $scope.messages = $rootScope.messages || [];
         $scope.webSites = WebSite.load();
         $scope.webSite = {name: '', url: '', description: ''};
         
@@ -11,7 +12,7 @@
         
         $scope.create = function() {
             WebSite.create($scope.webSite).then(function(data) {
-                $log.info(data);
+                $scope.messages.push(data.message);
             });
         };
     });

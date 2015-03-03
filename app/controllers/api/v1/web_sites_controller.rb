@@ -19,7 +19,16 @@ class Api::V1::WebSitesController < ApplicationController
     end.tap(&:save)
     
     respond_to do |format|
-      format.json { render json: {data: web_site}}
+      format.json { render json: {data: web_site, message: {text: "Web site '#{web_site.name}' was successfully created", type: 'success'}}}
+    end
+  end
+  
+  # remove given websites
+  def remove
+    ids = params[:web_sites]
+    
+    respond_to do |format|
+      format.json { render json: {data: nil, message: {text: "#{ids.count} web sites were removed", type: 'success'}}}
     end
   end
 end
