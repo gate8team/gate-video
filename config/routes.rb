@@ -15,6 +15,7 @@ GateTv::Application.routes.draw do
       scope '/web-sites' do
         get '/', to: 'web_sites#index'
         post '/create', to: 'web_sites#create'
+        delete '/remove', to: 'web_sites#remove'
       end
     end
   end
